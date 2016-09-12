@@ -1,0 +1,47 @@
+.zoomy{
+    position: absolute;
+    display: none;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: default;
+    text-align: center;
+    background-position: center;
+    background-color: transparent;
+    /*background:#fff*/
+}
+.zoomy span{
+    display: block;
+    margin: 10px auto;
+}
+
+
+.zoomy img{
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+.zoomy a{
+    color: #333;
+    text-decoration: none;
+}
+
+.broke a{
+    display: block;
+    height: 100%;
+    width: 100%;
+
+}
+
+#brokeZoomy{
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: #fff url(../img/broke.gif) center no-repeat;
+}
+

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 4000px;
+        }
+        .sj {
+            position: fixed;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        $(function () {
+            var sj=$(".sj").position().top;
+            var p=0,t=0;
+            $(window).scroll(function () {
+                p = $(this).scrollTop();
+                if(t<=p){
+                    sj=sj+10;
+                    console.log(sj);
+                    $(".sj").css({top:sj});
+                }else {
+                    sj=sj-10;
+                    console.log(sj);
+                    $(".sj").css({top:sj});
+                }
+                setTimeout(function(){t = p;},0);
+            });
+        })
+    </script>
+</head>
+<body>
+    <img class="sj" src="sj1.png" alt="">
+</body>
+</html>

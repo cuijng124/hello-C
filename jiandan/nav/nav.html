@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <style>
+        .path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear alternate infinite;;
+        }
+
+        @keyframes dash {
+            from {
+                stroke-dashoffset: 1000;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .curve {
+            width: 300px;
+            height: 100px;
+            background: url("img/1.png") no-repeat;
+            animation: curve 1s infinite;
+        }
+
+        @keyframes curve {
+            0% {
+                background: url("img/1.png") no-repeat;
+            }
+            50% {
+                background: url("img/2.png") no-repeat;
+            }
+            100% {
+                background: url("img/1.png") no-repeat;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="component">
+        <button class="cn-button" id="cn-button">导航</button>
+        <div class="cn-wrapper" id="cn-wrapper">
+            <ul>
+                <li><a href="#"><span>NAV1</span></a></li>
+                <li><a href="#"><span>NAV2</span></a></li>
+                <li><a href="#"><span>NAV3</span></a></li>
+                <li><a href="#"><span>NAV4</span></a></li>
+                <li><a href="#"><span>NAV5</span></a></li>
+                <li><a href="#"><span>NAV5</span></a></li>
+                <li><a href="#"><span>NAV7</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <svg width="340px" height="340px">
+        <path class="path" fill="none" stroke="#000" stroke-width="1" stroke-miterlimit="10" d="M66.039,133.545c0,0-21-57,18-67s49-4,65,8s30,41,53,27s66,4,58,32s-5,44,18,57s22,46,0,45s-54-40-68-16s-40,88-83,48s11-61-11-80s-79-7-70-41C46.039,146.545,53.039,128.545,66.039,133.545z"/>
+    </svg>
+    <br>
+
+    <svg id="svg" width="300" height="100">
+        <desc>二次贝塞尔平滑曲线</desc><defs></defs>
+        <!--
+            M : moveto 移动到  (x y)+;          Q : quadratic Bézier curveto  二次贝塞尔曲线到    (x1 y1 x y)+;
+            T : smooth quadratic Bézier curveto  光滑二次贝塞尔曲线到     (x2 y2 x y)+
+        -->
+        <path d="M20 10 Q140 40 180 20 T280 30" stroke="#000000" fill="none" style="stroke-width: 2px;"></path>
+    </svg>
+
+    <div class="curve"></div>
+</body>
+<script src="js/jquery.1.10.2.min.js"></script>
+<script>
+    $(function () {
+        var btn=$(".cn-button");
+        var wrapper=$(".cn-wrapper");
+        btn.hover(function () {
+            wrapper.addClass('nav')
+        },function () {
+            wrapper.removeClass('nav')
+        });
+        wrapper.hover(function () {
+            $(this).addClass('nav')
+        },function () {
+            $(this).removeClass('nav')
+        });
+    })
+</script>
+</html>

@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 2000px;
+        }
+        .triangle {
+            z-index: 1;
+        }
+        .triangle1 {
+            width: 0;
+            height: 0;
+            border-bottom: 240px solid #83CAC7;
+            border-right: 240px solid transparent;
+            position: fixed;
+            left: 60px;
+            top: 180px;
+            transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+        }
+        .triangle1 > div {
+            width: 0;
+            height: 0;
+            border-bottom: 237px solid #fff;
+            border-right: 237px solid transparent;
+            margin: 2px 0 0 1px;
+        }
+        .triangle2 {
+            width: 0;
+            height: 0;
+            border-bottom: 200px solid #9CC217;
+            border-right: 200px solid transparent;
+            position: fixed;
+            left: 0;
+            top: 70%;
+            transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+        }
+        .triangle2 > div {
+            width: 0;
+            height: 0;
+            border-bottom: 197px solid #fff;
+            border-right: 197px solid transparent;
+            margin: 2px 0 0 1px;
+        }
+        .triangle3 {
+            width: 0;
+            height: 0;
+            border-bottom: 80px solid #83CAC7;
+            border-right: 80px solid transparent;
+            position: fixed;
+            left: 10px;
+            top: 71%;
+            transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+        }
+        .triangle3 > div {
+            width: 0;
+            height: 0;
+            border-bottom: 77px solid #fff;
+            border-right: 77px solid transparent;
+            margin: 2px 0 0 1px;
+        }
+        .triangle4 {
+            width: 0;
+            height: 0;
+            border-bottom: 80px solid #83CAC7;
+            border-right: 80px solid transparent;
+            position: fixed;
+            left: 20px;
+            top: 83%;
+            transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+        }
+        .triangle4 > div {
+            width: 0;
+            height: 0;
+            border-bottom: 77px solid #fff;
+            border-right: 77px solid transparent;
+            margin: 2px 0 0 1px;
+        }
+        .triangle5 {
+            width: 0;
+            height: 0;
+            border-bottom: 40px solid #9CC217;
+            border-right: 40px solid transparent;
+            position: fixed;
+            left: 30px;
+            top: 81%;
+        }
+        .triangle5 > div {
+            width: 0;
+            height: 0;
+            border-bottom: 37px solid #fff;
+            border-right: 37px solid transparent;
+            margin: 2px 0 0 1px;
+        }
+        .triangle6 {
+            width: 0;
+            height: 0;
+            border-bottom: 80px solid #7F80AA;
+            border-right: 80px solid transparent;
+            position: fixed;
+            right: 90px;
+            top: 270px;
+            transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+        }
+        .triangle6 > div {
+            width: 0;
+            height: 0;
+            border-bottom: 77px solid #fff;
+            border-right: 77px solid transparent;
+            margin: 2px 0 0 1px;
+        }
+        .triangle7 {
+            width: 0;
+            height: 0;
+            border-bottom: 80px solid #9CC217;
+            border-right: 80px solid transparent;
+            position: fixed;
+            right: 5px;
+            top: 150px;
+            transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+        }
+        .triangle7 > div {
+            width: 0;
+            height: 0;
+            border-bottom: 77px solid #fff;
+            border-right: 77px solid transparent;
+            margin: 2px 0 0 1px;
+        }
+
+        header {
+            width: 100%;
+            height: 100px;
+            background: #000;
+        }
+        .headBox {
+            width: 100px;
+            height: 100%;
+            margin: auto;
+            position: relative;
+            cursor: pointer;
+        }
+        .headBox > img {
+            width: 60%;
+            position: absolute;
+            left: 20%;
+        }
+        .headBox > img:first-child {
+            top: 5%;
+        }
+        .headBox > img:nth-child(2) {
+            width: 80%;
+            left: 10%;
+            bottom: 0;
+        }
+
+        .phb {
+            width: 100%;
+            height: 500px;
+            /*margin-top: -500px;*/
+            display: none;
+            position: relative;
+        }
+        .close {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #333;
+            position: absolute;
+            left: 50%;
+            bottom: 40px;
+            margin-left: -15px;
+            text-align: center;
+            line-height: 30px;
+            overflow: hidden;
+            transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            cursor: pointer;
+        }
+        .cBtn {
+            width: 30px;
+            height: 30px;
+            background: #333;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: -30px;
+        }
+        .cSpan {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .close span {
+            display: block;
+            transform: rotate(45deg);
+        }
+
+
+        .star_box {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+        .star_box > img {
+            width: 100%;
+        }
+        .star1 {
+            width: 10px;
+            height: 10px;
+            background: rgba(0, 0, 145, .5);
+            border-radius: 50%;
+            position: absolute;
+            /*z-index: -10;*/
+            transition: transform 0.2s linear;
+        }
+
+
+        @media (max-width: 1200px) {
+            .triangle1 {
+                border-bottom: 200px solid #83CAC7;
+                border-right: 200px solid transparent;
+            }
+            .triangle1 > div {
+                border-bottom: 197px solid #fff;
+                border-right: 197px solid transparent;
+            }
+            .triangle2 {
+                border-bottom: 160px solid #9CC217;
+                border-right: 160px solid transparent;
+            }
+            .triangle2 > div {
+                border-bottom: 157px solid #fff;
+                border-right: 157px solid transparent;
+            }
+            .triangle3,.triangle4 {
+                border-bottom: 60px solid #83CAC7;
+                border-right: 60px solid transparent;
+            }
+            .triangle3 > div,.triangle4 > div {
+                border-bottom: 57px solid #fff;
+                border-right: 57px solid transparent;
+            }
+            .triangle5 {
+                border-bottom: 40px solid #9CC217;
+                border-right: 40px solid transparent;
+            }
+            .triangle5 > div {
+                border-bottom: 37px solid #fff;
+                border-right: 37px solid transparent;
+            }
+            .triangle6 {
+                border-bottom: 60px solid #7F80AA;
+                border-right: 60px solid transparent;
+            }
+            .triangle6 > div {
+                border-bottom: 57px solid #fff;
+                border-right: 57px solid transparent;
+            }
+            .triangle7 {
+                border-bottom: 60px solid #9CC217;
+                border-right: 60px solid transparent;
+            }
+            .triangle7 > div {
+                border-bottom: 57px solid #fff;
+                border-right: 57px solid transparent;
+            }
+        }
+        @media (max-width: 768px) {
+            .triangle1 {
+                border-bottom: 160px solid #83CAC7;
+                border-right: 160px solid transparent;
+            }
+            .triangle1 > div {
+                border-bottom: 157px solid #fff;
+                border-right: 157px solid transparent;
+            }
+            .triangle2 {
+                border-bottom: 120px solid #9CC217;
+                border-right: 120px solid transparent;
+            }
+            .triangle2 > div {
+                border-bottom: 117px solid #fff;
+                border-right: 117px solid transparent;
+            }
+            .triangle3,.triangle4 {
+                border-bottom: 40px solid #83CAC7;
+                border-right: 40px solid transparent;
+            }
+            .triangle3 > div,.triangle4 > div {
+                border-bottom: 37px solid #fff;
+                border-right: 37px solid transparent;
+            }
+            .triangle5 {
+                border-bottom: 30px solid #9CC217;
+                border-right: 30px solid transparent;
+            }
+            .triangle5 > div {
+                border-bottom: 27px solid #fff;
+                border-right: 27px solid transparent;
+            }
+            .triangle6 {
+                border-bottom: 40px solid #7F80AA;
+                border-right: 40px solid transparent;
+            }
+            .triangle6 > div {
+                border-bottom: 37px solid #fff;
+                border-right: 37px solid transparent;
+            }
+            .triangle7 {
+                border-bottom: 40px solid #9CC217;
+                border-right: 40px solid transparent;
+            }
+            .triangle7 > div {
+                border-bottom: 37px solid #fff;
+                border-right: 37px solid transparent;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../css/zoomy.css">
+</head>
+<body>
+    <!--隐藏的排行版-->
+    <div class="phb">
+        <div class="close">
+            <div class="cSpan">
+                <span>X</span>
+            </div>
+            <div class="cBtn">
+                <span>X</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="headBox">
+            <img src="../img/jp.png" alt="">
+            <img class="shan" src="../img/jps.png" alt="">
+        </div>
+    </header>
+
+    <!--导航-->
+
+
+
+    <!--三角形，星星-->
+    <div class="bj">
+        <div class="triangle1 triangle">
+            <div></div>
+        </div>
+        <div class="triangle2 triangle">
+            <div></div>
+        </div>
+        <div class="triangle3 triangle">
+            <div></div>
+        </div>
+        <div class="triangle4 triangle">
+            <div></div>
+        </div>
+        <div class="triangle5 triangle">
+            <div></div>
+        </div>
+        <div class="triangle6 triangle">
+            <div></div>
+        </div>
+        <div class="triangle7 triangle">
+            <div></div>
+        </div>
+    </div>
+    <a href="../img/bj1.png" class="star_box zoom"><img src="../img/bj.png" alt=""></a>
+</body>
+<script src="../js/jquery.1.10.2.min.js"></script>
+<script src="../js/zoomy.js"></script>
+<script>
+    $(function () {
+        var triangle=$(".triangle");
+        //console.log($("body").scrollTop());
+        var triangle1T=$(".triangle1").position().top;
+        var triangle2T=$(".triangle2").position().top;
+        var triangle3T=$(".triangle3").position().top;
+        var triangle4T=$(".triangle4").position().top;
+        var triangle5T=$(".triangle5").position().top;
+        var triangle6T=$(".triangle6").position().top;
+        var triangle7T=$(".triangle7").position().top;
+        var p=0,t=0;
+        $(window).scroll(function(){
+            p = $(this).scrollTop();
+            if(t<=p){
+                //console.log("向下");
+                triangle1T=triangle1T+5;
+                $(".triangle1").css({top:triangle1T});
+
+                triangle2T=triangle2T+4;
+                $(".triangle2").css({top:triangle2T});
+
+                triangle3T=triangle3T+3;
+                $(".triangle3").css({top:triangle3T});
+
+                triangle4T=triangle4T+2;
+                $(".triangle4").css({top:triangle4T});
+
+                triangle5T=triangle5T+5;
+                $(".triangle5").css({top:triangle5T});
+
+                triangle6T=triangle6T+10;
+                $(".triangle6").css({top:triangle6T});
+
+                triangle7T=triangle7T+20;
+                $(".triangle7").css({top:triangle7T});
+            }
+            else{
+                //console.log("向上")
+                triangle1T=triangle1T-5;
+                $(".triangle1").css({top:triangle1T});
+
+                triangle2T=triangle2T-4;
+                $(".triangle2").css({top:triangle2T});
+
+                triangle3T=triangle3T-3;
+                $(".triangle3").css({top:triangle3T});
+
+                triangle4T=triangle4T-2;
+                $(".triangle4").css({top:triangle4T});
+
+                triangle5T=triangle5T-5;
+                $(".triangle5").css({top:triangle5T});
+
+                triangle6T=triangle6T-10;
+                $(".triangle6").css({top:triangle6T});
+
+                triangle7T=triangle7T-20;
+                $(".triangle7").css({top:triangle7T});
+            }
+            setTimeout(function(){t = p;},0);
+        });
+
+        var shan=$(".shan");
+        setInterval(function () {
+            shan.fadeToggle('linear')
+        },20);
+
+
+        var phb=$(".phb");
+        var headBox=$(".headBox");
+        headBox.click(function () {
+            if($(this).hasClass('on')){
+                $(this).removeClass('on');
+                phb.slideUp();
+            } else {
+                $(this).addClass('on');
+                phb.slideDown();
+            }
+        });
+        var close=$(".close");
+        var cBtn=$(".cBtn");
+        var cSpan=$(".cSpan");
+        close.hover(function () {
+            cBtn.animate({top:0},200,'linear',function () {
+                console.log(cSpan.position().top);
+            });
+            cSpan.animate({top:'30px'},200,'linear');
+        },function () {
+            cBtn.animate({top:'-30px'},200,'linear');
+            cSpan.animate({top:0},200,'linear');
+        });
+        close.click(function () {
+            headBox.removeClass('on');
+            phb.slideUp();
+        });
+
+        //背景圆点
+        /*for (var i=0;i<100;i++){
+            var html="<div class='star1' style='left:"+GetRandomNum(1,99)+"%;top:"+GetRandomNum(0,2000)+"px'></div>";
+            $('.star_box').append(html);
+        }
+        var star1=$(".star1");
+        star1.hover(function () {
+            $(this).css({transform:'scale(1.5,1.5)'});
+        },function () {
+            $(this).css({transform:'scale(1,1)'})
+        })*/
+
+        /*导航
+        var btn=$("#btn");
+        var nav=$(".nav");
+        btn.click(function () {
+            if (nav.hasClass('nav_active')){
+                nav.removeClass('nav_active');
+            }else{
+                nav.addClass('nav_active');
+            }
+        })*/
+    });
+
+    function GetRandomNum(Min,Max) {
+        var Range = Max - Min;
+        var Rand = Math.random();
+        return(Min + Math.round(Rand * Range));
+    }
+
+    //This is it
+    $(function(){
+        $('.zoom').zoomy();
+    });
+</script>
+</html>

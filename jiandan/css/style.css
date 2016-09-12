@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body,div,input,p,ul,li,textarea {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑", 'Microsoft YaHei';
+}
+ul,li {
+    list-style: none;
+}
+img,input {
+    border: 0;
+}
+html,body {
+    color: #333;
+}
+a{
+    text-decoration:none;
+    color: #333;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+
+/*导航页*/
+.nav {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url("../img/nav.jpg");
+    background-repeat: no-repeat;
+    background-clip: padding-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.bj,.nav_box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.people {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 150px;
+    margin-left: -75px;
+}
+.simple {
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 8%;
+    margin-left: -300px;
+}
+
+
+.nav_list {
+    width: 176px;
+    height: 176px;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    z-index: 10;
+}
+
+.nav_list:hover {
+    -webkit-box-shadow:0 0 30px rgba(255, 250, 99, .5);
+    -moz-box-shadow:0 0 30px rgba(255, 250, 99, .5);
+    box-shadow:0 0 30px rgba(255, 250, 99, .5);
+}
+.nav_list1 {
+    background: url("../img/nav_list1.png") no-repeat;
+    background-size: cover;
+    left: 71%;
+    top: 19%;
+}
+.nav_list1:hover {
+    background: url("../img/nav_list1_hover.png") no-repeat;
+    background-size: cover;
+}
+.nav_list2 {
+    background: url("../img/nav_list2.png") no-repeat;
+    background-size: cover;
+    left: 14%;
+    top: 55%;
+}
+.nav_list2:hover {
+    background: url("../img/nav_list2_hover.png") no-repeat;
+    background-size: cover;
+}
+.nav_list3 {
+    background: url("../img/nav_list3.png") no-repeat;
+    background-size: cover;
+    left: 65%;
+    top: 55%;
+}
+.nav_list3:hover {
+    background: url("../img/nav_list3_hover.png") no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+    .people {
+        width: 120px;
+        left: 50%;
+        margin-left: -60px;
+    }
+    .simple {
+        width: 350px;
+        left: 50%;
+        margin-left: -175px;
+    }
+    .nav_list {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media (max-width: 768px) {
+    .people {
+        width: 20%;
+        left: 40%;
+        margin-left: 0;
+    }
+    .simple {
+        width: 40%;
+        left: 30%;
+        margin-left: 0;
+    }
+    .nav_list {
+        width: 115px;
+        height: 115px;
+    }
+}
